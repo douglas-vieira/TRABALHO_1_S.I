@@ -1,6 +1,7 @@
 #include "prog.h"
 
 int main(){
+	system("cls || clear");
 	FILE *arq=abrir_arquivo("BD.txt");
 	int aux=0;
 	Controle *header = (Controle *) calloc(1,sizeof (Controle));
@@ -48,7 +49,7 @@ void fechar_arquivo(FILE *arq){
 }
 int menu(){
 	int saida;
-	system("clear || cls");
+
 	printf("               ----->  MENU <-----\n");
 	printf("+-------------------------------------------------+\n");
 	printf("|1 |- Impressao online de relatorio gerencial.    |\n");
@@ -250,10 +251,10 @@ void consultar_produto(Controle *controle){
 			printf("\n\n");
 			flag =1;
 		}
-		if (flag==0)
-		{
-			printf("Código do produto nao encontrado.\n");
-		}
+	}
+	if (flag==0)
+	{
+		printf("Código do produto nao encontrado.\n");
 	}
 }
 void printar_relatorio(Controle *controle){
